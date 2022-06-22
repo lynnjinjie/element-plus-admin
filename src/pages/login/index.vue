@@ -1,6 +1,11 @@
-<script setup lang='ts'>
+<script lang="ts">
 import type { FormInstance, FormRules } from 'element-plus'
+export default {
+  name: 'Login',
+}
+</script>
 
+<script setup lang='ts'>
 const router = useRouter()
 const loginForm = reactive({
   username: '',
