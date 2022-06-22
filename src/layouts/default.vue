@@ -4,14 +4,14 @@
       sidebar
     </div>
     <div style="position: absolute; left: 105px; top:0">
-    <header>
-      this is header
-    </header>
+      <header>
+        this is header
+      </header>
 
-    <router-view />
-    <footer>
-      this is footer
-    </footer>
+      <router-view />
+      <footer>
+        this is footer
+      </footer>
     </div>
   </main>
 </template>

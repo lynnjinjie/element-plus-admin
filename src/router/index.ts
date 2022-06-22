@@ -1,11 +1,21 @@
+import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
-import { setupLayouts } from 'virtual:generated-layouts'
-import generatedRoutes from 'virtual:generated-pages'
-const routes = setupLayouts(generatedRoutes)
+
+const constantRoutes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    component: () => import('~/pages/home/index.vue'),
+  },
+  {
+    name: 'Login',
+    path: '/login',
+    component: () => import('~/pages/login/index.vue'),
+  },
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  routes: constantRoutes,
 })
 
 export default router

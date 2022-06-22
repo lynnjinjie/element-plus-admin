@@ -1,45 +1,36 @@
-
-import { defineConfig } from 'vite'
 import path from 'path'
+import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import Pages from 'vite-plugin-pages'
-import Layout from 'vite-plugin-vue-layouts'
-import Unocss  from 'unocss/vite'
-import { presetUno, presetIcons, presetAttributify } from 'unocss'
+import Unocss from 'unocss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`
-    }
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
   },
   plugins: [
     Vue({
-      reactivityTransform: true
+      reactivityTransform: true,
     }),
-    Pages(),
     Components({
-      resolvers: [ElementPlusResolver()]
+      resolvers: [ElementPlusResolver()],
     }),
-    Layout(),
     AutoImport({
       imports: [
         'vue',
         'vue/macros',
-        'vue-router'
+        'vue-router',
       ],
-      resolvers: [ElementPlusResolver()]
+      dirs: [
+        'src/composables',
+      ],
+      resolvers: [ElementPlusResolver()],
     }),
-    Unocss({
-      presets: [
-        presetUno(),
-        presetAttributify(),
-        presetIcons()
-      ]
-    })
+    Unocss(),
   ],
 })

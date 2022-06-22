@@ -2,14 +2,15 @@
 const props = defineProps({
   msg: {
     required: true,
-    default: 'hello'
-  }
+    default: 'hello',
+  },
 })
-  const count = ref(0)
+const count = ref(0)
 </script>
+
 <template>
   <div @click="count++">
-    {{count}}
+    {{ count }}
   </div>
   <button>{{ props.msg }}</button>
 </template>
