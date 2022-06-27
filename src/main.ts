@@ -3,4 +3,6 @@ import App from './App.vue'
 import router from '~/router'
 import '~/styles/index.css'
 import 'uno.css'
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+Object.values(import.meta.globEager('./modules/*.ts')).forEach(i => i.install(app))
+app.use(router).mount('#app')

@@ -11,6 +11,7 @@ specifiers:
   element-plus: ^2.2.6
   eslint: ^8.18.0
   npm-run-all: ^4.1.5
+  pinia: ^2.0.14
   typescript: ~4.7.2
   unocss: ^0.39.0
   unplugin-auto-import: ^0.8.7
@@ -23,6 +24,7 @@ specifiers:
 dependencies:
   '@unocss/reset': 0.39.0
   element-plus: 2.2.6_vue@3.2.37
+  pinia: 2.0.14_vcmyupim4cga7k7f5hngmth5py
   vue: 3.2.37
   vue-router: 4.0.16_vue@3.2.37
 
@@ -2861,6 +2863,24 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /pinia/2.0.14_vcmyupim4cga7k7f5hngmth5py:
+    resolution: {integrity: sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      typescript: 4.7.3
+      vue: 3.2.37
+      vue-demi: 0.13.1_vue@3.2.37
+    dev: false
+
   /pkg-types/0.3.2:
     resolution: {integrity: sha512-eBYzX/7NYsQEOR2alWY4rnQB49G62oHzFpoi9Som56aUr8vB8UGcmcIia9v8fpBeuhH3Ltentuk2OGpp4IQV3Q==}
     dependencies:
@@ -3295,7 +3315,6 @@ packages:
     resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /ufo/0.8.4:
     resolution: {integrity: sha512-/+BmBDe8GvlB2nIflWasLLAInjYG0bC9HRnfEpNi4sw77J2AJNnEVnTDReVrehoh825+Q/evF3THXTAweyam2g==}

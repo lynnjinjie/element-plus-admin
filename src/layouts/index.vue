@@ -3,9 +3,6 @@ const isCollapse = ref(false)
 const toggleSidebar = () => {
   isCollapse.value = !isCollapse.value
 }
-// const pl = watchEffect(() => {
-//   return isCollapse.value ? 'pl-63px' : 'pl-199px'
-// })
 </script>
 
 <template>
@@ -13,12 +10,10 @@ const toggleSidebar = () => {
     <div w-199px h-full fixed left-0 top-0>
       <Sidebar h-full :is-collapse="isCollapse" />
     </div>
-    <div :class="isCollapse ? 'pl-63px' : 'pl-199px'" transition-duration-300>
+    <div :class="isCollapse ? 'pl-63px' : 'pl-199px'" transition-duration-300 h-full>
       <header>
+        <div i-carbon:menu p-3 m-l-1 cursor-pointer @click="toggleSidebar" />
         this is header
-        <el-button @click="toggleSidebar">
-          切换
-        </el-button>
       </header>
       <main>
         <router-view />

@@ -2,6 +2,8 @@
 const props = defineProps<{
   isCollapse?: boolean
 }>()
+const authStore = useAuthStore()
+const { authRoutes } = authStore
 </script>
 
 <template>
@@ -12,25 +14,9 @@ const props = defineProps<{
   >
     <el-sub-menu index="1">
       <template #title>
-        <div i-carbon:align-box-middle-left text-18px />
+        <div class="icon" i-carbon:align-box-middle-left text-20px m-r-1 />
         <span>Navigator One</span>
       </template>
-      <el-menu-item-group>
-        <template #title>
-          <span>Group One</span>
-        </template>
-        <el-menu-item index="1-1">
-          item one
-        </el-menu-item>
-        <el-menu-item index="1-2">
-          item two
-        </el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">
-          item three
-        </el-menu-item>
-      </el-menu-item-group>
       <el-sub-menu index="1-4">
         <template #title>
           <span>item four</span>
@@ -45,14 +31,11 @@ const props = defineProps<{
         Navigator Two
       </template>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
+    <el-menu-item v-for="item in authRoutes" :key="item.name">
       <template #title>
-        Navigator Three
-      </template>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <template #title>
-        Navigator Four
+        <router-link :to="item.path">
+          {{ item.name }}
+        </router-link>
       </template>
     </el-menu-item>
   </el-menu>
