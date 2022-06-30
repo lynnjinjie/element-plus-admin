@@ -7,7 +7,17 @@ const constantRoutes: RouteRecordRaw[] = [
     path: '/',
     redirect: '/home',
   },
+
   {
+    name: 'Login',
+    path: '/login',
+    component: () => import('~/pages/login/index.vue'),
+  },
+]
+
+export const authRoutes: RouteRecordRaw[] = [
+  {
+    name: 'Home',
     path: '/home',
     component: Layout,
     redirect: '/home/index',
@@ -19,29 +29,28 @@ const constantRoutes: RouteRecordRaw[] = [
     ],
   },
   {
-    name: 'Login',
-    path: '/login',
-    component: () => import('~/pages/login/index.vue'),
-  },
-]
-
-export const authRoutes: RouteRecordRaw[] = [
-  {
-    name: 'about',
+    name: 'About',
     path: '/about',
-    component: () => import('~/pages/about/index.vue'),
+    redirect: '/about/index',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('~/pages/about/index.vue'),
+      },
+    ],
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: constantRoutes,
+  routes: constantRoutes.concat(authRoutes),
 })
 
-router.beforeEach(() => {
-  authRoutes.forEach((route) => {
-    router.addRoute(route)
-  })
-})
+// router.beforeEach(() => {
+//   authRoutes.forEach((route) => {
+//     router.addRoute(route)
+//   })
+// })
 
 export default router

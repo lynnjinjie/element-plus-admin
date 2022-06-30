@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  name: 'About',
+}
+</script>
+
 <script setup lang='ts'>
 const props = defineProps<{
   value?: boolean
@@ -6,6 +12,8 @@ const props = defineProps<{
 
 <template>
   <div>
-    about
+    <router-link to="/">
+      home page
+    </router-link>
   </div>
 </template>

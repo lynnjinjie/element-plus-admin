@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
+import Inspect from 'vite-plugin-inspect'
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -36,5 +37,6 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Unocss(),
+    Inspect(),
   ],
 })
