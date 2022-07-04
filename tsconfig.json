@@ -9,7 +9,7 @@
       "~/*": ["./src/*"]
     },
     "types": [
-      "element-plus/global"
+      "naive-ui/volar"
     ]
   },
   "exclude": ["node_modules", "dist"]

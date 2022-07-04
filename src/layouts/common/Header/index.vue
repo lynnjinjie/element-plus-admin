@@ -9,17 +9,11 @@ const toggleSidebar = () => {
 </script>
 
 <template>
-  <el-header>
+  <n-layout-header>
     <i i-carbon:menu cursor-pointer @click="toggleSidebar" />
     this is header
-  </el-header>
+  </n-layout-header>
 </template>
 
 <style lang="scss" scoped>
-.el-header {
-  @apply flex items-center bg-#222 text-white;
-  i {
-    @apply inline-block text-6;
-  }
-}
 </style>

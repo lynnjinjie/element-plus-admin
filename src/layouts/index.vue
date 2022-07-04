@@ -10,18 +10,18 @@ console.log('route', route)
 
 <template>
   <div h-screen>
-    <el-container h-screen>
+    <n-layout has-sider h-screen>
       <Sidebar :is-collapse="isCollapse" />
-      <el-container>
+      <n-layout>
         <Header @toggle="toggleSidebar" />
-        <el-main>
+        <n-layout-content>
           <router-view />
-        </el-main>
-        <el-footer>
+        </n-layout-content>
+        <n-layout-footer>
           this is footer
-        </el-footer>
-      </el-container>
-    </el-container>
+        </n-layout-footer>
+      </n-layout>
+    </n-layout>
   </div>
 </template>
 

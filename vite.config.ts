@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
 import Inspect from 'vite-plugin-inspect'
 // https://vitejs.dev/config/
@@ -22,7 +22,7 @@ export default defineConfig({
         'src/components',
         'src/layouts/common',
       ],
-      resolvers: [ElementPlusResolver()],
+      resolvers: [NaiveUiResolver()],
     }),
     AutoImport({
       imports: [
@@ -34,7 +34,7 @@ export default defineConfig({
         'src/composables',
         'src/store',
       ],
-      resolvers: [ElementPlusResolver()],
+      resolvers: [NaiveUiResolver()],
     }),
     Unocss(),
     Inspect(),
