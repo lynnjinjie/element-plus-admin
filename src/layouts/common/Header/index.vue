@@ -6,6 +6,8 @@ const emit = defineEmits(['toggle'])
 const toggleSidebar = () => {
   emit('toggle', 1)
 }
+const data = ref('')
+data.value = localStorage.getItem('data')
 </script>
 
 <template>
