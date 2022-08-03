@@ -40,6 +40,18 @@ export const authRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    name: 'Dashboard',
+    path: '/dashboard',
+    redirect: '/dashboard/index',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('~/pages/dashboard/index.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
