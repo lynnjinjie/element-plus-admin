@@ -5,9 +5,10 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Header: typeof import('./src/layouts/common/Header/index.vue')['default']
-    Hello: typeof import('./src/components/Hello.vue')['default']
+    Header: typeof import('./../layouts/common/Header/index.vue')['default']
+    Hello: typeof import('./../components/Hello.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NForm: typeof import('naive-ui')['NForm']
     NFormItem: typeof import('naive-ui')['NFormItem']
     NInput: typeof import('naive-ui')['NInput']
@@ -19,8 +20,8 @@ declare module '@vue/runtime-core' {
     NMenu: typeof import('naive-ui')['NMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Sidebar: typeof import('./src/layouts/common/Sidebar/index.vue')['default']
-    Stepper: typeof import('./src/components/Stepper.vue')['default']
+    Sidebar: typeof import('./../layouts/common/Sidebar/index.vue')['default']
+    Stepper: typeof import('./../components/Stepper.vue')['default']
   }
 }
 

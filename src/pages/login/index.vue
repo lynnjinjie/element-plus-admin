@@ -12,14 +12,6 @@ const loginForm = ref({
   password: '',
 })
 const loginFormRef = ref<FormInst | null>(null)
-// const loginFormRules = reactive<FormRules>({
-//   username: [
-//     { required: true, message: '用户名不能为空', trigger: 'blur' },
-//   ],
-//   password: [
-//     { required: true, message: '密码不能为空', trigger: 'blur' },
-//   ],
-// })
 const loginFormRules: FormRules = {
   username: [
     { required: true, message: '用户名不能为空', trigger: 'blur' },
@@ -34,12 +26,20 @@ const login = (formEl: FormInst | undefined) => {
       router.push('/')
   })
 }
+const setting = useSettingStore()
+const toggleTheme = () => {
+  setting.setDarkMode()
+}
 </script>
 
 <template>
-  <div h-full bg="#222">
-    <div h-full flex justify-center items-center>
-      <div class="bg-#18181c p-10 w-100" border-rounded-4>
+  <div h-full bg="#fff dark:#222">
+    <div h-full flex justify-center items-center relative>
+      <div text-8 absolute top-2 right-3>
+        <i v-if="setting.isDark" inline-block align-middle cursor-pointer i="dark:carbon-moon" @click="toggleTheme" />
+        <i v-else inline-block align-middle cursor-pointer i="carbon-sun" @click="toggleTheme" />
+      </div>
+      <div class="p-10 w-100 border" bg="dark:#1818c" border-rounded-4>
         <div text="8 #1890ff center">
           后台管理系统
         </div>

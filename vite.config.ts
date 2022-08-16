@@ -22,6 +22,7 @@ export default defineConfig({
         'src/components',
         'src/layouts/common',
       ],
+      dts: 'src/types/components.d.ts',
       resolvers: [NaiveUiResolver()],
     }),
     AutoImport({
@@ -29,11 +30,17 @@ export default defineConfig({
         'vue',
         'vue/macros',
         'vue-router',
+        {
+          '@vueuse/core': [
+            'useDark',
+          ],
+        },
       ],
       dirs: [
         'src/composables',
         'src/store',
       ],
+      dts: 'src/types/auto-imports.d.ts',
       resolvers: [NaiveUiResolver()],
     }),
     Unocss(),
