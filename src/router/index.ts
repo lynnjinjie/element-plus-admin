@@ -17,10 +17,24 @@ const constantRoutes: RouteRecordRaw[] = [
 
 export const authRoutes: RouteRecordRaw[] = [
   {
+    name: 'Dashboard',
+    path: '/dashboard',
+    redirect: '/dashboard/index',
+    component: Layout,
+    meta: { icon: 'carbon:dashboard', title: '控制台' },
+    children: [
+      {
+        path: 'index',
+        component: () => import('~/pages/dashboard/index.vue'),
+      },
+    ],
+  },
+  {
     name: 'Home',
     path: '/home',
     component: Layout,
     redirect: '/home/index',
+    meta: { icon: 'carbon:home', title: '首页' },
     children: [
       {
         path: 'index',
@@ -33,6 +47,7 @@ export const authRoutes: RouteRecordRaw[] = [
     path: '/about',
     redirect: '/about/index',
     component: Layout,
+    meta: { icon: 'carbon:bot', title: '关于' },
     children: [
       {
         path: 'index',
@@ -40,18 +55,7 @@ export const authRoutes: RouteRecordRaw[] = [
       },
     ],
   },
-  {
-    name: 'Dashboard',
-    path: '/dashboard',
-    redirect: '/dashboard/index',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('~/pages/dashboard/index.vue'),
-      },
-    ],
-  },
+
 ]
 
 const router = createRouter({

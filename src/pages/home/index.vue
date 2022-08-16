@@ -6,6 +6,7 @@ export default {
 
 <script setup lang="ts">
 const { x, y } = useMouse()
+const settingStore = useSettingStore()
 </script>
 
 <template>

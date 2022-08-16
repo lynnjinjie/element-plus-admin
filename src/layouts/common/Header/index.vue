@@ -8,12 +8,18 @@ const toggleSidebar = () => {
 }
 const data = ref('')
 data.value = localStorage.getItem('data')
+const router = useRouter()
+const logout = () => {
+  router.push('/login')
+}
 </script>
 
 <template>
-  <n-layout-header>
-    <i i-carbon:menu cursor-pointer @click="toggleSidebar" />
-    this is header
+  <n-layout-header h-63px p-x-2 flex items-center>
+    header
+    <n-button @click="logout">
+      退出
+    </n-button>
   </n-layout-header>
 </template>
 
