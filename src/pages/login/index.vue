@@ -35,7 +35,7 @@ const toggleTheme = () => {
 <template>
   <div h-full bg="#fff dark:#222">
     <div h-full flex justify-center items-center relative>
-      <div text-8 absolute top-2 right-3>
+      <div w-48px h-48px text-center text-8 absolute top-3 right-3>
         <i v-if="setting.isDark" inline-block align-middle cursor-pointer i="dark:carbon-moon" @click="toggleTheme" />
         <i v-else inline-block align-middle cursor-pointer i="carbon-sun" @click="toggleTheme" />
       </div>

@@ -30,9 +30,11 @@ export default defineConfig({
         'vue',
         'vue/macros',
         'vue-router',
+        'pinia',
         {
           '@vueuse/core': [
             'useDark',
+            'useStorage',
           ],
         },
       ],

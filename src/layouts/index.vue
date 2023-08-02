@@ -5,7 +5,6 @@ const toggleSidebar = (value) => {
   isCollapse.value = !isCollapse.value
 }
 const route = useRoute()
-console.log('route', route)
 </script>
 
 <template>
@@ -14,7 +13,8 @@ console.log('route', route)
       <Sidebar :is-collapse="isCollapse" />
       <n-layout>
         <Header @toggle="toggleSidebar" />
-        <n-layout-content>
+        <Tab />
+        <n-layout-content class="min-h-500px">
           <router-view />
         </n-layout-content>
         <n-layout-footer>

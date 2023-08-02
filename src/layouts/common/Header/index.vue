@@ -16,7 +16,9 @@ const logout = () => {
 
 <template>
   <n-layout-header h-63px p-x-2 flex items-center>
-    header
+    <button @click="toggleSidebar">
+      切换侧边栏
+    </button>
     <n-button @click="logout">
       退出
     </n-button>

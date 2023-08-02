@@ -1,13 +1,13 @@
+<script setup lang='ts'>
+import { useCounterStore } from '~/store/counter'
+const counter = useCounterStore()
+const { count } = counter
+</script>
+
 <script lang="ts">
 export default {
   name: 'About',
 }
-</script>
-
-<script setup lang='ts'>
-const props = defineProps<{
-  value?: boolean
-}>()
 </script>
 
 <template>
@@ -15,5 +15,6 @@ const props = defineProps<{
     <router-link to="/">
       home page
     </router-link>
+    <div>counter count: {{ count }}</div>
   </div>
 </template>

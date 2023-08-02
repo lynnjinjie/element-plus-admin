@@ -19,12 +19,12 @@ export const authRoutes: RouteRecordRaw[] = [
   {
     name: 'Dashboard',
     path: '/dashboard',
-    redirect: '/dashboard/index',
     component: Layout,
-    meta: { icon: 'carbon:dashboard', title: '控制台' },
+    meta: { icon: 'carbon:dashboard', title: '控制台', hidden: false },
     children: [
       {
-        path: 'index',
+        path: '',
+        name: 'Dashboard',
         component: () => import('~/pages/dashboard/index.vue'),
       },
     ],
@@ -33,11 +33,11 @@ export const authRoutes: RouteRecordRaw[] = [
     name: 'Home',
     path: '/home',
     component: Layout,
-    redirect: '/home/index',
-    meta: { icon: 'carbon:home', title: '首页' },
+    meta: { icon: 'carbon:home', title: '首页', hidden: false },
     children: [
       {
-        path: 'index',
+        path: '',
+        name: 'Home',
         component: () => import('~/pages/home/index.vue'),
       },
     ],
@@ -45,22 +45,41 @@ export const authRoutes: RouteRecordRaw[] = [
   {
     name: 'About',
     path: '/about',
-    redirect: '/about/index',
+    // redirect: '/about/index',
     component: Layout,
-    meta: { icon: 'carbon:bot', title: '关于' },
+    meta: { icon: 'carbon:bot', title: '关于', hidden: false },
     children: [
       {
-        path: 'index',
+        path: '',
+        name: 'About',
         component: () => import('~/pages/about/index.vue'),
       },
     ],
   },
-
+  {
+    name: 'Demo',
+    path: '/demo',
+    component: Layout,
+    meta: { icon: 'carbon:folder-move-to', title: 'demo', hidden: false },
+    children: [
+      {
+        path: '',
+        name: 'Demo',
+        component: () => import('~/pages/demo/index.vue'),
+      },
+    ],
+  },
+  {
+    name: '404',
+    path: '/:pathMatch(.*)*',
+    meta: { icon: 'carbon:bot', title: '关于', hidden: true },
+    component: () => import('~/pages/404.vue'),
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: constantRoutes.concat(authRoutes),
+  routes: [...constantRoutes, ...authRoutes],
 })
 
 // router.beforeEach(() => {

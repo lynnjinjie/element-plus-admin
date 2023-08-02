@@ -10,7 +10,7 @@ const settingStore = useSettingStore()
 </script>
 
 <template>
-  <div>home</div>
+  <div>home hello world</div>
   <div>{{ x }}, {{ y }}</div>
 </template>
 
