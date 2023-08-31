@@ -57,15 +57,27 @@ export const authRoutes: RouteRecordRaw[] = [
     ],
   },
   {
-    name: 'Demo',
     path: '/demo',
     component: Layout,
     meta: { icon: 'carbon:folder-move-to', title: 'demo', hidden: false },
     children: [
       {
-        path: '',
-        name: 'Demo',
-        component: () => import('~/pages/demo/index.vue'),
+        path: '3',
+        name: 'Demo3',
+        component: () => import('~/pages/demo/page/demo3.vue'),
+        meta: { icon: 'carbon:folder-move-to', title: 'demo3', hidden: false },
+      },
+      {
+        path: '1',
+        name: 'Demo1',
+        component: () => import('~/pages/demo/page/demo1.vue'),
+        meta: { icon: 'carbon:folder-move-to', title: 'demo1', hidden: false },
+      },
+      {
+        path: '2',
+        name: 'Demo2',
+        component: () => import('~/pages/demo/page/demo2.vue'),
+        meta: { icon: 'carbon:folder-move-to', title: 'demo2', hidden: false },
       },
     ],
   },

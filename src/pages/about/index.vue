@@ -1,13 +1,10 @@
 <script setup lang='ts'>
 import { useCounterStore } from '~/store/counter'
+defineOptions({
+  name: 'About',
+})
 const counter = useCounterStore()
 const { count } = counter
-</script>
-
-<script lang="ts">
-export default {
-  name: 'About',
-}
 </script>
 
 <template>
@@ -18,3 +15,4 @@ export default {
     <div>counter count: {{ count }}</div>
   </div>
 </template>
+~/store/modules/counter

@@ -1,24 +1,26 @@
 <script setup lang="ts">
-const isCollapse = ref(false)
-const toggleSidebar = (value) => {
-  console.log('value', value)
-  isCollapse.value = !isCollapse.value
-}
-const route = useRoute()
+const tagsStore = useTagsStore()
+const includePage = computed(() => tagsStore.tags.map(tag => tag.name))
 </script>
 
 <template>
   <div h-screen>
     <n-layout has-sider h-screen>
-      <Sidebar :is-collapse="isCollapse" />
+      <Sidebar />
       <n-layout>
-        <Header @toggle="toggleSidebar" />
+        <n-layout-header>
+          <Header />
+        </n-layout-header>
         <Tab />
-        <n-layout-content class="min-h-500px">
-          <router-view />
+        <n-layout-content>
+          <router-view v-slot="{ Component, route }" >
+              <keep-alive :include="includePage">
+                <component :is="Component" :key="route.fullPath"></component>
+              </keep-alive>
+            </router-view>
         </n-layout-content>
         <n-layout-footer>
-          this is footer
+          <Footer />
         </n-layout-footer>
       </n-layout>
     </n-layout>
@@ -26,5 +28,4 @@ const route = useRoute()
 </template>
 
 <style lang="scss" scoped>
-
 </style>

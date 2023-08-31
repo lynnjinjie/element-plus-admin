@@ -7,12 +7,12 @@ export const useSettingStore = defineStore('setting', () => {
   const theme = computed<GlobalTheme | undefined>(() => {
     return isDark.value ? darkTheme : undefined
   })
-  const setDarkMode = () => {
+  const toggleTheme = () => {
     isDark.value = !isDark.value
   }
   return {
     isDark,
     theme,
-    setDarkMode,
+    toggleTheme,
   }
 })

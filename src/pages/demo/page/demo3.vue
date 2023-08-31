@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useCounterStore } from '~/store/counter'
+defineOptions({
+  name: 'Demo3',
+})
 const counter = useCounterStore()
 const { count, doubleCount, doublePlusOne, getUserName } = storeToRefs(counter)
 const { increment, userInfo } = counter
@@ -15,12 +18,6 @@ function reset() {
 }
 </script>
 
-<script lang="ts">
-export default {
-  name: 'Demo',
-}
-</script>
-
 <template>
   <div>demo</div>
   <div>Current count: {{ count }} {{ doubleCount }} {{ doublePlusOne }}</div>
@@ -32,3 +29,4 @@ export default {
     reset
   </button>
 </template>
+~/store/modules/counter

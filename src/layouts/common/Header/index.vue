@@ -1,28 +1,16 @@
 <script setup lang='ts'>
-const props = defineProps<{
-  value?: boolean
-}>()
-const emit = defineEmits(['toggle'])
-const toggleSidebar = () => {
-  emit('toggle', 1)
-}
-const data = ref('')
-data.value = localStorage.getItem('data')
-const router = useRouter()
-const logout = () => {
-  router.push('/login')
-}
+import UserAvatar from './components/UserAvatar.vue'
+defineOptions({
+  name: 'Header',
+})
+const { toggleTheme } = useSettingStore()
 </script>
 
 <template>
-  <n-layout-header h-63px p-x-2 flex items-center>
-    <button @click="toggleSidebar">
-      切换侧边栏
-    </button>
-    <n-button @click="logout">
-      退出
-    </n-button>
-  </n-layout-header>
+  <div h-63px flex items-center justify-end px-4>
+    <div mx-2 cursor-pointer text-5 i="carbon-sun dark:carbon-moon" @click="toggleTheme()" />
+    <UserAvatar />
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -1,12 +1,8 @@
-<script lang="ts">
-export default {
-  name: 'Home',
-}
-</script>
-
 <script setup lang="ts">
+defineOptions({
+  name: 'Home',
+})
 const { x, y } = useMouse()
-const settingStore = useSettingStore()
 </script>
 
 <template>

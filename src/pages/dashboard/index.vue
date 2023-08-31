@@ -1,5 +1,8 @@
 <script setup lang='ts'>
 import * as echarts from 'echarts'
+defineOptions({
+  name: 'Dashboard',
+})
 onMounted(() => {
   initChart()
 })
