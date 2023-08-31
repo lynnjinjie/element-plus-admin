@@ -1,6 +1,12 @@
 {
-  "extends": "@antfu",
+  "extends": [
+    "@antfu", 
+    "@unocss"
+  ],
   "rules": {
-    "no-console": 0
+    "no-console": 0,
+    "vue/space-unary-ops": 0,
+    "vue/comma-dangle": 0,
+    "vue/dot-location": 0
   }
 }

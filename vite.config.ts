@@ -1,11 +1,12 @@
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
 import Inspect from 'vite-plugin-inspect'
+import viteCompression from 'vite-plugin-compression'
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -14,6 +15,8 @@ export default defineConfig({
     },
   },
   plugins: [
+    splitVendorChunkPlugin(),
+    viteCompression(),
     Vue({
       reactivityTransform: true,
     }),
@@ -36,6 +39,11 @@ export default defineConfig({
             'useDark',
             'useStorage',
           ],
+          'naive-ui': [
+            'useDialog',
+            'useMessage',
+            'useNotification',
+          ],
         },
       ],
       dirs: [
@@ -43,7 +51,6 @@ export default defineConfig({
         'src/store',
       ],
       dts: 'src/types/auto-imports.d.ts',
-      resolvers: [NaiveUiResolver()],
     }),
     Unocss(),
     Inspect(),

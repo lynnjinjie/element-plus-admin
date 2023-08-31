@@ -5,23 +5,29 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Footer: typeof import('./../layouts/common/Footer/index.vue')['default']
     Header: typeof import('./../layouts/common/Header/index.vue')['default']
     Hello: typeof import('./../components/Hello.vue')['default']
-    NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NDialogProvider: typeof import('naive-ui')['NDialogProvider']
+    NDropdown: typeof import('naive-ui')['NDropdown']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
     NMenu: typeof import('naive-ui')['NMenu']
+    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NSpace: typeof import('naive-ui')['NSpace']
     NTag: typeof import('naive-ui')['NTag']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sidebar: typeof import('./../layouts/common/Sidebar/index.vue')['default']
     Stepper: typeof import('./../components/Stepper.vue')['default']
+    SvgIcon: typeof import('./../components/SvgIcon.vue')['default']
     Tab: typeof import('./../layouts/common/Tab/index.vue')['default']
+    TheIcon: typeof import('./../components/TheIcon.vue')['default']
+    UserAvatar: typeof import('./../layouts/common/Header/components/UserAvatar.vue')['default']
   }
 }
 
