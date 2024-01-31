@@ -12,7 +12,7 @@ const includePage = computed(() => tagsStore.tags.map(tag => tag.name))
           <Header />
         </n-layout-header>
         <Tab />
-        <n-layout-content>
+        <n-layout-content content-style="height: calc(100vh - 145px)">
           <router-view v-slot="{ Component, route }" >
               <keep-alive :include="includePage">
                 <component :is="Component" :key="route.fullPath"></component>

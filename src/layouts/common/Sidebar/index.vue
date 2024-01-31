@@ -45,10 +45,9 @@ function renderItem(item, path = '') {
     key: item.path,
     path: item.path,
     icon: renderIcon(item.meta.icon as string),
-    children: item?.children?.length > 1 ? item.children.map(v => renderItem(v, item.path)) : '',
+    children: item?.children?.length > 1 ? item.children.map(v => renderItem(v, item.path)) : undefined,
   }
 }
-console.log('authRoutes', authRoutes)
 const menuOptions: MentionOption[] = authRoutes
   .filter(v => (v.meta.hidden === false))
   .map(item => renderItem(item))
@@ -73,7 +72,7 @@ function handleMenuSelect(key, item) {
     @collapse="collapsed = true"
   >
     <div h-14 f-c-c>
-      <img src="https://assets.qszone.com/images/avatar.jpg" h-10 w-10>
+      <img src="/giphy.gif" h-10 w-10>
       <h2 v-show="!collapsed" ml-2 flex-shrink-0 text-5 font-bold text-red-400>
         Snow Admin
       </h2>

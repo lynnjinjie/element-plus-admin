@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
+import { viteMockServe } from 'vite-plugin-mock'
 import Inspect from 'vite-plugin-inspect'
 import viteCompression from 'vite-plugin-compression'
 // https://vitejs.dev/config/
@@ -19,6 +20,11 @@ export default defineConfig({
     viteCompression(),
     Vue({
       reactivityTransform: true,
+    }),
+    viteMockServe({
+      mockPath: 'src/mock/api',
+      enable: true,
+      watchFiles: true,
     }),
     Components({
       dirs: [
@@ -38,6 +44,7 @@ export default defineConfig({
           '@vueuse/core': [
             'useDark',
             'useStorage',
+            'useFetch',
           ],
           'naive-ui': [
             'useDialog',

@@ -15,4 +15,4 @@ export const useSettingStore = defineStore('setting', () => {
     theme,
     toggleTheme,
   }
-})
+}, { persist: true })

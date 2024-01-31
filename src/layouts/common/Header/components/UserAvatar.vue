@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/comma-dangle -->
 <script setup lang='ts'>
 import { LogOutOutline as LogoutIcon } from '@vicons/ionicons5'
 import { NIcon } from 'naive-ui'
@@ -44,7 +43,7 @@ function handleSelect(key) {
 <template>
   <n-dropdown :options="options" trigger="hover" @select="handleSelect">
     <div ml-4 flex cursor-pointer items-center>
-      <img src="https://assets.qszone.com/images/avatar.jpg" mr-1 h-35px w-35px rounded-full>
+      <img src="/giphy.gif" mr-1 h-35px w-35px rounded-full>
       <span>{{ name }}</span>
     </div>
   </n-dropdown>

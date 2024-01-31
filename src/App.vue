@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { dateZhCN, zhCN } from 'naive-ui'
 const { theme } = toRefs(useSettingStore())
-console.log('theme', theme.value)
 </script>
 
 <template>
