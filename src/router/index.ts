@@ -17,15 +17,22 @@ const constantRoutes: RouteRecordRaw[] = [
 
 export const authRoutes: RouteRecordRaw[] = [
   {
-    name: 'Dashboard',
+    // name: 'Dashboard',
     path: '/dashboard',
     component: Layout,
-    meta: { icon: 'carbon:dashboard', title: '控制台', hidden: false },
+    meta: { icon: 'carbon:dashboard', title: 'Dashboard', hidden: false },
     children: [
       {
-        path: '',
-        name: 'Dashboard',
-        component: () => import('~/pages/dashboard/index.vue'),
+        path: 'console',
+        name: 'console',
+        meta: { title: '控制台', hidden: false },
+        component: () => import('~/pages/dashboard/console/index.vue'),
+      },
+      {
+        path: 'workplace',
+        name: 'workplace',
+        meta: { title: '工作台', hidden: false },
+        component: () => import('~/pages/dashboard/workplace/index.vue'),
       },
     ],
   },

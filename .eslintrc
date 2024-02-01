@@ -7,6 +7,7 @@
     "no-console": 0,
     "vue/space-unary-ops": 0,
     "vue/comma-dangle": 0,
-    "vue/dot-location": 0
+    "vue/dot-location": 0,
+    "vue/object-curly-newline": 0
   }
 }

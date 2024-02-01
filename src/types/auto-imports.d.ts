@@ -70,6 +70,7 @@ declare global {
   const useCssVars: typeof import('vue')['useCssVars']
   const useDark: typeof import('@vueuse/core')['useDark']
   const useDialog: typeof import('naive-ui')['useDialog']
+  const useECharts: typeof import('../composables/useECharts')['useECharts']
   const useFetch: typeof import('@vueuse/core')['useFetch']
   const useMessage: typeof import('naive-ui')['useMessage']
   const useMouse: typeof import('../composables/mouse')['useMouse']

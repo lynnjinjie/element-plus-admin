@@ -10,7 +10,8 @@ const { authRoutes } = authStore
 function renderIcon(icon: string) {
   return () => h(NIcon, null, { default: () => h(Icon, { icon }) })
 }
-const collapsed = ref(false)
+// const collapsed = ref(false)
+const { collapsed } = storeToRefs(useSettingStore())
 const activeKey = ref<string | null>(null)
 const route = useRoute()
 const router = useRouter()
@@ -55,7 +56,6 @@ watchEffect(() => {
   activeKey.value = route.fullPath as string
 })
 function handleMenuSelect(key, item) {
-  // console.log('key item', key, item)
   router.push(item.path)
 }
 </script>
