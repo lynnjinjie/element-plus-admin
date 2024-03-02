@@ -1,7 +1,7 @@
 lockfileVersion: '6.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 dependencies:
@@ -81,10 +81,10 @@ devDependencies:
     version: 0.39.3(vite@4.5.2)
   unplugin-auto-import:
     specifier: ^0.8.8
-    version: 0.8.8(@vueuse/core@9.13.0)(esbuild@0.18.17)(vite@4.5.2)
+    version: 0.8.8(@vueuse/core@9.13.0)(vite@4.5.2)
   unplugin-vue-components:
     specifier: ^0.19.9
-    version: 0.19.9(esbuild@0.18.17)(vite@4.5.2)(vue@3.4.15)
+    version: 0.19.9(vite@4.5.2)(vue@3.4.15)
   vite:
     specifier: ^4.5.2
     version: 4.5.2(@types/node@16.18.77)(sass@1.70.0)
@@ -96,7 +96,7 @@ devDependencies:
     version: 0.7.42(vite@4.5.2)
   vite-plugin-mock:
     specifier: ^3.0.1
-    version: 3.0.1(esbuild@0.18.17)(mockjs@1.1.0)(vite@4.5.2)
+    version: 3.0.1(mockjs@1.1.0)(vite@4.5.2)
   vue-tsc:
     specifier: ^0.35.2
     version: 0.35.2(typescript@4.7.4)
@@ -1447,13 +1447,12 @@ packages:
       run-applescript: 5.0.0
     dev: true
 
-  /bundle-require@4.0.1(esbuild@0.18.17):
+  /bundle-require@4.0.1:
     resolution: {integrity: sha512-9NQkRHlNdNpDBGmLpngF3EFDcwodhMUuLz9PaWYciVcQF9SE4LFjM2DB/xV1Li5JiuDMv7ZUWuC3rGbqR0MAXQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       esbuild: '>=0.17'
     dependencies:
-      esbuild: 0.18.17
       load-tsconfig: 0.2.5
     dev: true
 
@@ -4119,7 +4118,7 @@ packages:
     engines: {node: '>=12.18'}
     dev: true
 
-  /unimport@0.2.7(esbuild@0.18.17)(vite@4.5.2):
+  /unimport@0.2.7(vite@4.5.2):
     resolution: {integrity: sha512-lnClmDG8f4ZfLrAXSbHoHXdmYPREW+W0Z99+E/aomHNbvwSBsQVTH6dSChHAdyjp3LNicj/jQgq5DQN8Ho8huA==}
     dependencies:
       '@rollup/pluginutils': 4.2.1
@@ -4131,7 +4130,7 @@ packages:
       pathe: 0.3.0
       scule: 0.2.1
       strip-literal: 0.3.0
-      unplugin: 0.7.0(esbuild@0.18.17)(vite@4.5.2)
+      unplugin: 0.7.0(vite@4.5.2)
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -4184,7 +4183,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /unplugin-auto-import@0.8.8(@vueuse/core@9.13.0)(esbuild@0.18.17)(vite@4.5.2):
+  /unplugin-auto-import@0.8.8(@vueuse/core@9.13.0)(vite@4.5.2):
     resolution: {integrity: sha512-cVZ79zMR1v4VCZ9emFTUnltmazCc2B4hObyVrxJdlgJ2sK8qub6JfjFt38rCF6MVEddkHiWCU6wZR1qbdqe+ig==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4198,8 +4197,8 @@ packages:
       '@vueuse/core': 9.13.0(vue@3.4.15)
       local-pkg: 0.4.1
       magic-string: 0.26.2
-      unimport: 0.2.7(esbuild@0.18.17)(vite@4.5.2)
-      unplugin: 0.7.0(esbuild@0.18.17)(vite@4.5.2)
+      unimport: 0.2.7(vite@4.5.2)
+      unplugin: 0.7.0(vite@4.5.2)
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -4207,7 +4206,7 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue-components@0.19.9(esbuild@0.18.17)(vite@4.5.2)(vue@3.4.15):
+  /unplugin-vue-components@0.19.9(vite@4.5.2)(vue@3.4.15):
     resolution: {integrity: sha512-i5mZtg85euPWZrGswFkoa9pf4WjKCP5qOjnwOyg3KOKVzFjnP3osCdrunQMjtoMKehTdz1vV6baZH8bZR4PNgg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4229,7 +4228,7 @@ packages:
       magic-string: 0.26.2
       minimatch: 5.1.0
       resolve: 1.22.1
-      unplugin: 0.7.0(esbuild@0.18.17)(vite@4.5.2)
+      unplugin: 0.7.0(vite@4.5.2)
       vue: 3.4.15(typescript@4.7.4)
     transitivePeerDependencies:
       - esbuild
@@ -4239,7 +4238,7 @@ packages:
       - webpack
     dev: true
 
-  /unplugin@0.7.0(esbuild@0.18.17)(vite@4.5.2):
+  /unplugin@0.7.0(vite@4.5.2):
     resolution: {integrity: sha512-OsiFrgybmqm5bGuaodvbLYhqUrvGuRHRMZDhddKEXTDbuQ1x+hR7M1WpQguXj03whVYjEYChhFo738cZH5RNig==}
     peerDependencies:
       esbuild: '>=0.13'
@@ -4258,7 +4257,6 @@ packages:
     dependencies:
       acorn: 8.10.0
       chokidar: 3.5.3
-      esbuild: 0.18.17
       vite: 4.5.2(@types/node@16.18.77)(sass@1.70.0)
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.3
@@ -4337,7 +4335,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-mock@3.0.1(esbuild@0.18.17)(mockjs@1.1.0)(vite@4.5.2):
+  /vite-plugin-mock@3.0.1(mockjs@1.1.0)(vite@4.5.2):
     resolution: {integrity: sha512-jEqRkX6Ts6z9e3sPrktcmujLGTIjxMwMZUhcgoo1q0dEMcljMBkZgJK1vMaetTm+GfOy2NkGVQOwVqLS/Vy6Uw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -4345,7 +4343,7 @@ packages:
       vite: '>=4.0.0'
     dependencies:
       '@types/mockjs': 1.0.7
-      bundle-require: 4.0.1(esbuild@0.18.17)
+      bundle-require: 4.0.1
       chokidar: 3.5.3
       connect: 3.7.0
       debug: 4.3.4
