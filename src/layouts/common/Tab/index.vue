@@ -15,7 +15,6 @@ watch(
   () => route.path,
   () => {
     const { name, fullPath: path } = route
-    console.log("🚀 ~ route:", route)
 
     const title = route.meta?.title
     const icon = route.meta?.icon || ''

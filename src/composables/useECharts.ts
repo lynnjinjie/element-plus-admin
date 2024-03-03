@@ -65,10 +65,14 @@ export function useECharts(
     chartInstance = null
   })
 
-  watch(getCollapsed, () => {
-    setTimeout(() => {
-      resizeFn()
-    }, 30)
+  const scope = effectScope()
+
+  scope.run(() => {
+    watch(getCollapsed, () => {
+      setTimeout(() => {
+        resizeFn()
+      }, 30)
+    })
   })
 
   function getInstance(): echarts.ECharts | null {
@@ -79,6 +83,7 @@ export function useECharts(
   }
 
   onUnmounted(() => {
+    scope.stop()
     window.removeEventListener('resize', resizeFn)
   })
 
