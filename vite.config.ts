@@ -1,5 +1,5 @@
 import path from 'path'
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -16,21 +16,15 @@ export default defineConfig({
     },
   },
   plugins: [
-    splitVendorChunkPlugin(),
     viteCompression(),
-    Vue({
-      reactivityTransform: true,
-    }),
+    Vue(),
     viteMockServe({
       mockPath: 'src/mock/api',
       enable: true,
       watchFiles: true,
     }),
     Components({
-      dirs: [
-        'src/components',
-        'src/layouts/common',
-      ],
+      dirs: ['src/components', 'src/layouts/common'],
       dts: 'src/types/components.d.ts',
       resolvers: [NaiveUiResolver()],
     }),
@@ -41,22 +35,11 @@ export default defineConfig({
         'vue-router',
         'pinia',
         {
-          '@vueuse/core': [
-            'useDark',
-            'useStorage',
-            'useFetch',
-          ],
-          'naive-ui': [
-            'useDialog',
-            'useMessage',
-            'useNotification',
-          ],
+          '@vueuse/core': ['useDark', 'useStorage', 'useFetch'],
+          'naive-ui': ['useDialog', 'useMessage', 'useNotification'],
         },
       ],
-      dirs: [
-        'src/composables',
-        'src/store',
-      ],
+      dirs: ['src/composables', 'src/store'],
       dts: 'src/types/auto-imports.d.ts',
     }),
     Unocss(),
